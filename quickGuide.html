@@ -72,10 +72,13 @@
                                         </div>
 
                                         <!-- Modal footer -->
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger"
+                                        <div class="modal-footer d-flex justify-content-between">
+                                            <p id="totalPrice" class="text-danger"></p>
+                                            <div>
+                                                <button type="button" class="btn btn-danger"
                                                 data-dismiss="modal">Close</button>
-                                            <button class="btn btn-danger">Checkout</button>
+                                                <button class="btn btn-danger">Checkout</button>
+                                            </div>
                                         </div>
 
                                     </div>
@@ -94,8 +97,10 @@
                 <li class="nav-item">
                     <a class="nav-link" target="blank" href="quickGuide.html">Quick Guide</a>
                 </li>
+                <li>
+                    <a href="#">Delivery HotLines: 07053905931</a>
+                </li>
             </ul>
-            <p class="text-danger ">Delivery HotLines: 07053905931</p>
         </div>
         <!-- Links -->
     </nav>
@@ -367,6 +372,7 @@
     let foodName = document.getElementsByClassName("foodname");
     let beforeFood = document.getElementById("beforeFood");
     let orderedFood = [];
+    localStorage.setItem("foodsInCart", JSON.stringify(orderedFood));
     let totalPrice=document.getElementById("totalPrice")
     let price;
     //orderedFood = JSON.parse(localStorage.getItem("foodsInCart"))
@@ -399,7 +405,7 @@
         }
     }
     let orderedCart = () => {
-        
+        foodCarts.innerHTML =""
         orderedFood = JSON.parse(localStorage.getItem("foodsInCart"))
         price=0
         for (let index = 0; index < orderedFood.length; index++) {
@@ -483,6 +489,9 @@
                 console.log("ok");
                 beforeFood.innerHTML = `<p class="text-info display-4">${arr[index].name} is available.</p>`;
                 break;
+            }
+            else{
+                
             }
         }
     }
