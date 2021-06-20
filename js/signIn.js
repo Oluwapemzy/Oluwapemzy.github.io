@@ -4,7 +4,27 @@ let firstName, lastName, email, password, repeatPass;
 
 let users = []
 localStorage.setItem("users", JSON.stringify(users))
-
+let login = () => {
+    users = JSON.parse(localStorage.getItem("users"))
+    let logInemail = document.getElementById("email").value;
+    let loginPassword = document.getElementById("pwd").value;
+    console.log(loginPassword);
+    if (users.length==0) {
+        alert("Click on the Create a new account please.")
+    }
+    for (let index = 0; index < users.length; index++) {
+        if (logInemail == users[index].email && loginPassword == users[index].password) {
+            console.log(true);
+            alert(`Login Successful, welcome ${users[index].firstName.toUpperCase()}`)
+            document.getElementById("email").value="";
+            document.getElementById("pwd").value="";
+            break;
+        }else{
+            console.log("false");
+            alert("invalid login details")
+        }
+    }
+}
 let register = () => {
     users=JSON.parse(localStorage.getItem("users"))
     firstName = document.getElementById("firstName").value;
@@ -22,31 +42,7 @@ let register = () => {
             }
         )
         localStorage.setItem("users", JSON.stringify(users))
-        document.getElementById("myModal").innerHTML = `
-            <!-- The Modal -->
-
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Modal Heading</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    Regitration was successful.
-                </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-
-                </div>
-            </div>
-        `
+        document.getElementById("myModa").style.display ="inherit" 
         document.getElementById("firstName").value = "";
         document.getElementById("lastName").value = ""
         document.getElementById("emailReg").value = ""
@@ -68,19 +64,4 @@ let removeAdd = () => {
     document.getElementById("register").style.display = "inherit"
     document.getElementById("register2").style.display = "inherit"
 }
-let login = () => {
-    let arr1 = JSON.parse(localStorage.getItem("users"))
-    let logInemail = document.getElementById("email").value;
-    let loginPassword = document.getElementById("pwd").value;
-    console.log(loginPassword);
-    for (let index = 0; index < users.length; index++) {
-        alert(users[index])
-        if (logInemail == users[index].email && loginPassword == users[index].password) {
-            console.log(true);
-            alert(true)
-            break;
-        } else {
-            alert("invalid login details")
-        }
-    }
-}
+
