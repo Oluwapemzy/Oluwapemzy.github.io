@@ -111,7 +111,7 @@
         <hr>
         <div>
             <h4>Member Login</h4>
-            <div class="border w-50 ml-5 mb-5 pb-4 pt-4 pl-4">
+            <div class="border w-75 mb-5 pb-4 pt-4 pl-1 pr-1">
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" class="form-control w-75" id="email">
@@ -126,7 +126,7 @@
         </div>
         <div class="fluid-container mb-3">
             <h3>Create New Pippy Account</h3>
-            <div class="border ml-3">
+            <div class="border">
                 <span class="" style="font-size: 30px;">New to Pippy? </span>
                 <button class="btn" onclick="removeAdd()">Create a new account</button>
             </div>
@@ -383,6 +383,7 @@
             totalPrice.innerHTML=""
             totalPrice.innerHTML+=`# ${price}`
         }
+        totalPrice.innerHTML=`# ${price}`
     }
 
     let remove=(position) => {
@@ -399,6 +400,7 @@
             totalPrice.innerHTML=""
             totalPrice.innerHTML+=`# ${price}`
         }
+        totalPrice.innerHTML=`# ${price}`
     }
     let arr = [
         {
