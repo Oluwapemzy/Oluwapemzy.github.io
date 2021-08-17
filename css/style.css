@@ -8,4 +8,21 @@ nav {
 }
 .card:hover .card-text{
     color: red;
+    font-weight: bolder;
+    /* font-size: 20px; */
+}
+
+
+/* @media screen and (max-width: 600px) {
+  .navbar a {
+    color: aqua;
+    width: 100%;
+  }
+} */
+
+
+@media screen and (max-width: 900px) and (min-width: 600px) {
+  .searchMealNloc {
+    background: red;
+  }
 }
