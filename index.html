@@ -4,14 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Restaurant</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="js/jquery.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <!-- <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAABRUlAAOJAyABUiFAAXIxcANWE2AEFIRQA7mzgAGSkXANXXywAdLBcAS0tFAAvC4gBITUsADcLiAA8QDAAPwuIAIiojABw3HQARxeIAUk9IAEE+OgA9lDYAFikYABkmGAB70X4ARUhGAEVLRgBAnjkARUxJAFg7OgAcJCQADMHgACRiIAAPxeMAEcbmABLG5gB9tm0AE8bmAHCbXAAQHhMAQjw1ADhDQQA5kDQAfDolAFOhSwB4PysAEigWAG1BQwB8PCsAKnI1ABooFgAMvd4AVWNhAEdMSgCXqIsADMHhAA7B4QBJT0oAOjw2ALLBnwASxeQAOUI/ABkXEQA0r88AOZIyACkzJQAZGBQAaUU+ADuTNQAWIBoAYEhZACUYFABdnE8AfkAvAA3A3wALxOIAD8XlABDF5QAQFxIAERcSACA5HQAgOxoADx0SAB89IAAoka0AOI8zAGBvawA4kjMAOo8zAD9CQAAVIRUARUA6ACg3KQDP1MYAHBkYADyWNgAHBwcAKz0yAAsLCgBGS0kAR0tJAA3A4AAKxOMASE5JAGqUUwBJTkkAUEtAAEpOSQBFoTwARaQ8AA7F5gBInz8AEcTjAFBRSQAdPB4ANI4xAF1raQAUxeYASqFFAMzMwQAmKyoAEhoTAEikTgAWf50AdT0xABZGPAAWIxMAUV1bADyWNwBocG8AFycWAII+IgAHCggAQklEANPTzQBDTUcACcPhABO/1QAPwOEADcPhAAzC5wBNTUcADcTkABHA4QBKT00ADhUOAGRgWwAPxOQAITAfADKLMgAPFhEAeMN0AEqoSQCjspEASo12ABtKJQAWIBQAFh4XAGRvbQBbVEoAPJU1ANLUyAAVEz4AR0pIAB0iIwAJw+IASUtLAEdOSwAoWSUAFkIXABDD4gA2iS0AXWpoAF9qaABIqEoAUlZRABIgFQA5kTMAN5QzAHdaXAAYGBgAO5I2ABgiEgAWJhUAIlEgAEJJRgBESEMA1NjMABoqGABESkkAPp08AArC4AAMwuAADMDjAAzD4wAOw+MASlFMABDD4wBcZmYADcfmAB84HgA2jTEAzc3HAFhRTABhbmwAGRcWADqUNADR08cAFysKABkmFgAXKhkAGCoZAERJRwBGTEcADBALAEdQSgAPwuEAEMLhABLD5ABcaWcAEMfnAE1SUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAftG8Bk9hvpVXRAFVVckgfpwCt4QQR9IWLshAoLVYLEWRlnliDrZSsFrOUKAVRJqiMgnWzRvQJwOCX3OysSpvTgdgy0G4m6lsbZcYU4BySKtgPpQfSjzD2cHYOEpUPH0xnVGoiXwNvx0rMLM/ZTMNjzoX0xHAjqULDTcPQw9GiiR4Qlm6douMwseDqnvFD3q7tAqvo2tLkyF1SZMt2nChz8ZZOWdr100vJSWTJcOGCDZWxDljGgyuIiOOIpM7yl2QzNt/1Wfd1E3cZiWYd5mNo4GsdGNpuYWHTJNuBHGfWxmtdDRjpwUpHhKIXGgFE2qmnhynvT2kkgDUJl5jZBQoNQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" /> -->
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" sizes="200x200">
 </head>
+
 
 <body>
     <nav class="navbar navbar-expand-sm bg-light navbar-light">
@@ -64,6 +67,8 @@
                                                     <tr>
                                                         <th>Food</th>
                                                         <th>Price</th>
+                                                        <th>Quantity</th>
+                                                        <!-- <th>delete</th> -->
                                                     </tr>
                                                 </thead>
                                                 <tbody id="foodCarts">
@@ -117,14 +122,14 @@
     </div>
     <!-- <input type="number" name="" class="form-control" id=""> -->
 
-    <div id="menu">
+    <div class="fluid-container" id="menu">
         <h2 class="text-center">MENU</h2>
         <div class="d-flex flex-wrap bg-light row justify-content-center" id="fooddivcont">
             <div class="card m-2 border col-sm-3">
                 <img class="card-img-top" src="img/download.jpg" alt="Card image" width="100px" height="200px">
                 <div class="card-body">
                     <h4 class="card-title foodname" id="foonam">AMALA</h4>
-                    <p class="card-text">Some example text.</p>
+                    <p class="card-text">Amala with Gbegiri</p>
                     <button href="#" class="btn btn-primary" onclick="addToCart(`${0}`)">Add to Cart</button>
                 </div>
             </div>
@@ -133,7 +138,7 @@
                 <img class="card-img-top" src="img/spaghetti.jpg" alt="Card image" width="150px" height="250px">
                 <div class="card-body">
                     <h4 class="card-title foodname" id="foonam">Spaghetti</h4>
-                    <p class="card-text">Some example text.</p>
+                    <p class="card-text">JOLLOF SPAGHETTI + CHICKEN</p>
                     <button class="btn btn-primary" onclick="addToCart(`${1}`)">Add to Cart</button>
                 </div>
             </div>
@@ -143,7 +148,7 @@
                     height="250px">
                 <div class="card-body">
                     <h4 class="card-title foodname" id="foonam">Jollof with Grilled Meat and Plantain</h4>
-                    <p class="card-text">Some example text.</p>
+                    <p class="card-text">JOLLOF RICE + GRILLED / FRIED CHICKEN + PLANTAIN</p>
                     <button class="btn btn-primary" onclick="addToCart(`${2}`)">Add to Cart</button>
                 </div>
             </div>
@@ -179,7 +184,7 @@
                 <img class="card-img-top" src="img/ewaGanyin.jpg" alt="Card image" width="150px" height="250px">
                 <div class="card-body">
                     <h4 class="card-title foodname" id="foonam">Plain Beans</h4>
-                    <p class="card-text">Some example text.</p>
+                    <p class="card-text">EWA AGANYIN & SAUCE + PLANTAIN + PONMO</p>
                     <button class="btn btn-primary" onclick="addToCart(`${6}`)">Add to Cart</button>
                 </div>
             </div>
@@ -205,7 +210,31 @@
         </div>
 
     </div>
-    <footer class="text-center text-lg-start text-light" style="background-color: rgba(165, 71, 42, 0.89);">
+
+    <div>
+        <button class="btn btn-warning" onclick="orderedCart()">View Cart</button>
+        <button type="button" class="close" onclick="showMenu()">&times;
+        </button>
+        <br>
+     </div>
+
+     
+     <div id="newCart" class="table-responsive">
+         <table class="table table-bordered table-stripped">
+             <thead>
+                 <tr>
+                     <th>Food</th>
+                     <th>Price</th>
+                     <th>Quantity</th>
+                 </tr>
+             </thead>
+             <tbody id="cartTable">
+                 
+             </tbody>
+         </table>
+         <p id="totalDownPrice"></p>
+     </div>
+    <footer class="fluid-container text-center text-lg-start text-light" style="background-color: rgba(165, 71, 42, 0.89);">
         <!-- Section: Social media -->
         <section class="d-flex justify-content-center justify-content-between p-4">
             <!-- Left -->
@@ -322,6 +351,21 @@
 </body>
 
 </html>
+
+<!-- <script>
+    const input = document.querySelector("#searchMealval")
+    const submit = document.querySelector("#search")
+    const value = document.querySelector("#beforeFood")
+
+    const doIt = () => {
+        value.innerHTML = ` <p id="beforeFood">${input.value} is available </p>`
+
+    }
+
+    submit.addEventListener("click", doIt)
+
+
+</script> -->
 <script src="js/app.js"></script>
 
 <!-- <script>
