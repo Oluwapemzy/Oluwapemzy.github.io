@@ -1,5 +1,7 @@
 
 let firstName, lastName, email, password, repeatPass;
+let cartTable = document.getElementById("cartTable");
+let totalDownPrice=document.getElementById("totalDownPrice")
 
 let users = []
 let arr = [
@@ -103,21 +105,31 @@ let addToCart = (num) => {
 }
 let displayPrice = () => {
     foodCarts.innerHTML = ""
+    cartTable.innerHTML = ""
     price = 0
     for (let index = 0; index < orderedFood.length; index++) {
         let qua = orderedFood[index].quantity
         if (qua != 0) {
-            foodCarts.innerHTML += `<tr><td>${orderedFood[index].name}</td> <td>${orderedFood[index].price}</td><td><input onchange="ode(${index})" type="number" name="" class="form-control" id="quantity${index}" value="${orderedFood[index].quantity}"></td><td><button onclick="remove(${index})" class="btn-danger">Delete</button></td></tr>`
+            foodCarts.innerHTML += `<tr><td>${orderedFood[index].name}</td> <td>${orderedFood[index].price}</td><td><input onchange="ode(${index})" type="number" name="" class="form-control" id="quantity${index}" value="${orderedFood[index].quantity}"></td><td><button onclick="remove(${index})" class="btn-danger"><span class="price pull-left"><i class="fa fa-trash"></i></span></button></td></tr>`
+            cartTable.innerHTML += `<tr><td>${orderedFood[index].name}</td> <td>${orderedFood[index].price}</td><td><input onchange="ode(${index})" type="number" name="" class="form-control" id="quantity${index}" value="${orderedFood[index].quantity} input"></td><td><button onclick="remove(${index})" class="btn-danger"><span class="price pull-left"><i class="fa fa-trash"></i></span></button></td></tr>`
+            
             price += (orderedFood[index].price * qua);
             totalPrice.innerHTML = ""
             totalPrice.innerHTML += `# ${price}`
-
+            totalDownPrice.innerHTML=""
+            totalDownPrice.innerHTML+=`${price}`
+            document.getElementById("menu").style.display="inherit"
+            document.getElementById("newCart").style.display="inherit"
         }
 
     }
     totalPrice.innerHTML = `# ${price}`
+    totalDownPrice.innerHTML=`# ${price}`
 }
 
+let showMenu=()=>{
+    document.getElementById("newCart").style.display="none"
+}
 let orderedCart = () => {
     foodCarts.innerHTML = ""
     orderedFood = JSON.parse(localStorage.getItem("foodsInCart"))
@@ -147,8 +159,6 @@ let remove = (position) => {
     price = 0
     displayPrice()
 }
-
-
 
 let foodLists = document.getElementById("foodLists");
 
