@@ -6,23 +6,31 @@ nav {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
 }
+
 .card:hover .card-text{
     color: red;
     font-weight: bolder;
     /* font-size: 20px; */
 }
 
-
-/* @media screen and (max-width: 600px) {
-  .navbar a {
-    color: aqua;
-    width: 100%;
-  }
-} */
+footer{
+  font-size: 22px;
+}
 
 
 @media screen and (max-width: 900px) and (min-width: 600px) {
   .searchMealNloc {
     background: red;
+    color: rgb(252, 88, 59);
+  }
+  
+}
+@media screen and (max-width: 300px){
+  nav a img{
+    width: 150px;
+  }
+  .searchMealNloc img{
+    width: 150px;
   }
 }
+
