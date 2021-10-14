@@ -162,14 +162,14 @@ let remove = (position) => {
     displayPrice()
 }
 
-let foodLists = document.getElementById("foodLists");
+// let foodLists = document.getElementById("foodLists");
 
-let foodListsFunc = () => {
-    for (let food = 0; food < arr.length; food++) {
-        foodLists.innerHTML += `<a class="dropdown-item" href="#">${arr[food].name}</a>`;
-    }
-}
-foodListsFunc();
+// let foodListsFunc = () => {
+//     for (let food = 0; food < arr.length; food++) {
+//         foodLists.innerHTML += `<a class="dropdown-item" href="#">${arr[food].name}</a>`;
+//     }
+// }
+// foodListsFunc();
 
 localStorage.setItem("food", JSON.stringify(arr))
 let search = () => {
