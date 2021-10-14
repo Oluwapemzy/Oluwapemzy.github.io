@@ -91,6 +91,7 @@ let price;
 let quantity;
 //orderedFood = JSON.parse(localStorage.getItem("foodsInCart"))
 let foonam = document.getElementById("foonam")
+
 let addToCart = (num) => {
     arr = JSON.parse(localStorage.getItem("food"));
     orderedFood = JSON.parse(localStorage.getItem("foodsInCart"));
@@ -102,6 +103,7 @@ let addToCart = (num) => {
             break
         }
     }
+    
 }
 let displayPrice = () => {
     foodCarts.innerHTML = ""
