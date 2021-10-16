@@ -25,34 +25,7 @@ let login = () => {
         }
     }
 }
-// let register = () => {
-//     users=JSON.parse(localStorage.getItem("users"))
-//     firstName = document.getElementById("firstName").value;
-//     lastName = document.getElementById("lastName").value;
-//     email = document.getElementById("emailReg").value;
-//     password = document.getElementById("pass").value;
-//     repeatPass = document.getElementById("repeatPwd").value;
-//     if (password == repeatPass) {
-//         users.push(
-//             {
-//                 firstName: firstName,
-//                 lastName: lastName,
-//                 email: email,
-//                 password: password
-//             }
-//         )
-//         localStorage.setItem("users", JSON.stringify(users))
-//         document.getElementById("myModa").style.display ="inherit" 
-//         document.getElementById("firstName").value = "";
-//         document.getElementById("lastName").value = ""
-//         document.getElementById("emailReg").value = ""
-//         document.getElementById("pass").value = ""
-//         document.getElementById("repeatPwd").value = ""
-//     }
-//     else {
-//         document.getElementById("state").innerHTML += `<br> passwords doesn't match`
-//     }
-// }
+
 let logBack =()=>{
     document.getElementById("fluid").style.display = "inherit"
     document.getElementById("register").style.display = "none"

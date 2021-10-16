@@ -1,7 +1,7 @@
 
 let firstName, lastName, email, password, repeatPass;
 let cartTable = document.getElementById("cartTable");
-let totalDownPrice=document.getElementById("totalDownPrice")
+let totalDownPrice = document.getElementById("totalDownPrice")
 
 let users = []
 let arr = [
@@ -66,6 +66,8 @@ let register = () => {
         document.getElementById("emailReg").value = ""
         document.getElementById("pass").value = ""
         document.getElementById("repeatPwd").value = ""
+        document.getElementById("fluid").style.display="inherit"
+        logBack()
     }
     else {
         document.getElementById("state").innerHTML += `<br> passwords doesn't match`
@@ -95,6 +97,15 @@ let foonam = document.getElementById("foonam")
 let addToCart = (num) => {
     arr = JSON.parse(localStorage.getItem("food"));
     orderedFood = JSON.parse(localStorage.getItem("foodsInCart"));
+    let btnCli = document.getElementsByClassName("btn-primary");
+    console.log(btnCli[num].innerHTML);
+    btnCli[num].innerHTML = "Added to Cart"
+
+    btnCli[num].style.background = "#FF0000"
+    setInterval(() => {
+        btnCli[num].innerHTML = "Add to Cart"
+        btnCli[num].style.background="#0069D9"
+    }, 4000);
     for (let index = 0; index < orderedFood.length; index++) {
         console.log(foodName[num].innerHTML);
         if (orderedFood[index].name.toLowerCase() == foodName[num].innerHTML.toLocaleLowerCase()) {
@@ -103,7 +114,7 @@ let addToCart = (num) => {
             break
         }
     }
-    
+
 }
 let displayPrice = () => {
     foodCarts.innerHTML = ""
@@ -114,23 +125,23 @@ let displayPrice = () => {
         if (qua != 0) {
             foodCarts.innerHTML += `<tr><td>${orderedFood[index].name}</td> <td>${orderedFood[index].price}</td><td><input onchange="ode(${index})" type="number" name="" class="form-control" id="quantity${index}" value="${orderedFood[index].quantity}"></td><td><button onclick="remove(${index})" class="btn-danger"><span class="price pull-left"><i class="fa fa-trash"></i></span></button></td></tr>`
             cartTable.innerHTML += `<tr><td>${orderedFood[index].name}</td> <td>${orderedFood[index].price}</td><td><input onchange="ode(${index})" type="number" name="" class="form-control" id="quantity${index}" value="${orderedFood[index].quantity} input"></td><td><button onclick="remove(${index})" class="btn-danger"><span class="price pull-left"><i class="fa fa-trash"></i></span></button></td></tr>`
-            
+
             price += (orderedFood[index].price * qua);
             totalPrice.innerHTML = ""
             totalPrice.innerHTML += `# ${price}`
-            totalDownPrice.innerHTML=""
-            totalDownPrice.innerHTML+=`${price}`
-            document.getElementById("menu").style.display="inherit"
-            document.getElementById("newCart").style.display="inherit"
+            totalDownPrice.innerHTML = ""
+            totalDownPrice.innerHTML += `${price}`
+            // document.getElementById("menu").style.display="inherit"
+            // document.getElementById("newCart").style.display="inherit"
         }
 
     }
     totalPrice.innerHTML = `# ${price}`
-    totalDownPrice.innerHTML=`# ${price}`
+    totalDownPrice.innerHTML = `# ${price}`
 }
 
-let showMenu=()=>{
-    document.getElementById("newCart").style.display="none"
+let showMenu = () => {
+    document.getElementById("newCart").style.display = "none"
 }
 let orderedCart = () => {
     foodCarts.innerHTML = ""
@@ -162,14 +173,7 @@ let remove = (position) => {
     displayPrice()
 }
 
-// let foodLists = document.getElementById("foodLists");
 
-// let foodListsFunc = () => {
-//     for (let food = 0; food < arr.length; food++) {
-//         foodLists.innerHTML += `<a class="dropdown-item" href="#">${arr[food].name}</a>`;
-//     }
-// }
-// foodListsFunc();
 
 localStorage.setItem("food", JSON.stringify(arr))
 let search = () => {
